@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="info-container">
+			<h1>SNAKE</h1>
+			<b> Use WASD to move</b>
+		</div>
+		<div>
+
+		<canvas height="500" width="500" id="canvas"></canvas>
+		</div>
+		<div>
+			<button type="button" onclick="resetGame()">Restart</button>
+		</div>
+
+		<script src="./Point.js"></script>
+		<script src="./Apple.js"></script>
+		<script src="./Snake.js"></script>
+		<script src="./Board.js"></script>
+		<script src="./main.js"></script>
+	</body>
+</html>
+
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+		font-family: Arial, Helvetica, sans-serif;
+		text-align: center;
+	}
+
+	body{ 
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100vh;	
+		background-color: rgb(184, 185, 185);
+	}
+
+	button {
+		font-size: 1.5rem;
+		padding: 5%;
+	}
+	.info-container{
+		text-align: center;
+
+	}
+
+</style>
