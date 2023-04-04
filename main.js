@@ -4,7 +4,7 @@ let speed = 100;
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-let head = new Point(0, 0);
+let head = new Point(250, 250);
 let snake = new Snake(head);
 let board = new Board();
 let apple = new Apple(board);
@@ -15,21 +15,21 @@ canvas.style.background = "white";
 board.occupyCell(head.x, head.y);
 
 const resetGame = () => {
-head = new Point(0, 0);
-snake = new Snake(head);
-board = new Board();
-apple = new Apple(board);
-gameLoop = true;
-dir = 2; // 1: up, 2: down, 3: left, 4: right
-draw()
+	head = new Point(250, 250);
+	snake = new Snake(head);
+	board = new Board();
+	apple = new Apple(board);
+	gameLoop = true;
+	dir = 2;
+	draw();
 };
+
 const draw = () => {
 	//clear canvas
 	ctx.fillStyle = "black";
 	ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 	snake.draw(ctx);
 	snake.move(dir, apple, board);
-
 	apple.draw(ctx);
 
 	if (gameLoop) {
@@ -40,9 +40,6 @@ const draw = () => {
 };
 
 const displayGameOver = () => {
-	// ctx.fillStyle = "white";
-	// ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
-
 	ctx.fillStyle = "black";
 	ctx.font = "bold 16px Arial";
 	ctx.textAlign = "center";

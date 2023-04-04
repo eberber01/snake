@@ -25,7 +25,6 @@ class Snake {
 					break;
 				}
 				gameLoop = false;
-				console.log("game over");
 				return;
 			case 2:
 				if (head.y < 475) {
@@ -33,7 +32,6 @@ class Snake {
 					break;
 				}
 				gameLoop = false;
-				console.log("game over");
 				return;
 			case 3:
 				if (head.x > 0) {
@@ -41,7 +39,6 @@ class Snake {
 					break;
 				}
 				gameLoop = false;
-				console.log("game over");
 				return;
 			case 4:
 				if (head.x < 475) {
@@ -49,14 +46,12 @@ class Snake {
 					break;
 				}
 				gameLoop = false;
-				console.log("game over");
 				return;
 		}
 
 		// collision check
 		if (board.isOccupied(head.x, head.y)) {
 			gameLoop = false;
-			console.log("game over");
 			return;
 		}
 
@@ -70,7 +65,6 @@ class Snake {
 		for (let i = 1; i < this.length; i++) {
 			let x = this.body[i].x;
 			let y = this.body[i].y;
-			console.log(x, y, i)
 			board.unoccupyCell(x, y);
 
 			this.body[i].x = prevX;
@@ -84,10 +78,7 @@ class Snake {
 
 	addNode() {
 		let tail = this.body[this.length - 1];
-		let newTail = new Point(
-			tail.x,
-			tail.y 
-		);
+		let newTail = new Point(tail.x, tail.y);
 
 		this.body.push(newTail);
 		this.length += 1;
